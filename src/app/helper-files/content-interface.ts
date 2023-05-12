@@ -1,6 +1,7 @@
-interface Content {
-    id: number;
+export interface Content {
+    readonly id: number;
     type: string;
-    imageUrl: string;
+    imageUrl?: string;
     body: string;
+    tags: string[];
 }
