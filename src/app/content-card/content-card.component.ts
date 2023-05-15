@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 
 @Component({
@@ -7,6 +7,7 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent implements OnInit {
+  @Input() content: Content;
 
   // Define 3 contentItems
   contentItem2:Content = {
@@ -16,7 +17,7 @@ export class ContentCardComponent implements OnInit {
     type: 'news',
     tags: []
   }
-  content: { id: number; imageUrl: string; body: string; type: string; };
+
   // let myContentList: ContentList;
 
   constructor() {
@@ -33,13 +34,14 @@ export class ContentCardComponent implements OnInit {
   }
 
   ngOnInit(){
-
-//called after the constructor and called after the first ngOnChanges()
-this.content = { id: 0,
-  imageUrl:
-  'https://angular.io/assets/images/logos/angular/angular .png',
-  body: 'This is the body of the content',
-        type: 'news'
-      };
+  //called after the constructor and called after the first ngOnChanges()
+    this.content = {
+      id: 0,
+      imageUrl:
+      'https://angular.io/assets/images/logos/angular/angular .png',
+      body: 'This is the body of the content',
+      type: 'news',
+      tags: []
+    };
   }
 }
