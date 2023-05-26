@@ -8,12 +8,22 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentListComponent implements OnInit {
   // Define your array of content here so the variable is available in content-list.comp....html
+  name: string;
   myContentArray: Content[];
   contentItem = {
     id: 0,
     imageUrl:
-    'https://angular.io/assets/images/logos/angular/angular .png',
+    'https://angular.io/assets/images/logos/angular/angular.png',
     body: 'This is the body of the content',
+    type: 'news',
+    tags: []
+  };
+
+  contentItem4 = {
+    id: 0,
+    imageUrl:
+    'https://angular.io/assets/images/logos/angular/angular.png',
+    body: 'This is the body of the content This is the body of the content This is the body of the content',
     type: 'news',
     tags: []
   };
@@ -21,22 +31,21 @@ export class ContentListComponent implements OnInit {
   contentItem2 = {
     id: 1,
     imageUrl:
-    'https://angular.io/assets/images/logos/angular/angular .png',
+    'https://angular.io/assets/images/logos/angular/angular.png',
     body: 'This is the body of the content item 2',
-    type: 'news',
+    type: 'old',
     tags: []
   };
 
   contentItem3 = {
     id:2,
     imageUrl:
-    'https://angular.io/assets/images/logos/angular/angular .png',
+    'https://angular.io/assets/images/logos/angular/angular.png',
     body: 'This is the body of the content item 2',
-    type: 'news',
     tags: []
   };
 
   ngOnInit(){
-    this.myContentArray = [this.contentItem, this.contentItem2, this.contentItem3]
+    this.myContentArray = [this.contentItem, this.contentItem2, this.contentItem3, this.contentItem4]
   }
 }

@@ -1,4 +1,6 @@
 <p>content-list works!</p>
+<input [(ngModel)]="name"> My name is: {{ name | uppercase }}
+<p>My lowercase name is {{ name | lowercase }}</p>
 
 <!-- Use the following in a for *ngFor call to display 6/7 Content cards -->
 <!-- <app-content-card *ngFor="let content of myContentArray"></app-content-card> -->
@@ -8,4 +10,4 @@
 
 <!-- Using a for loop to display all items of contentArray -->
 <!-- appContentCard will use "item" as its input / content -->
-<app-content-card *ngFor="let content of myContentArray" [content]="content"></app-content-card>
+<app-content-card *ngFor="let item of (myContentArray | contentFilter)" [content]="item"></app-content-card>
